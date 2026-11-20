@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{7A1F9C22-4E83-4B57-9D61-2C8A5B7E3F04}</ProjectGuid>
+    <RootNamespace>NavGUI</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <IntDir>$(ProjectDir)..\.build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntDir>
+    <OutDir>$(ProjectDir)..\bin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <IntDir>$(ProjectDir)..\.build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntDir>
+    <OutDir>$(ProjectDir)..\bin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>..\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>..\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalDependencies>dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <Manifest>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <!-- Debugger uses the runtime output directory. -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments></LocalDebuggerCommandArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments></LocalDebuggerCommandArguments>
+  </PropertyGroup>
+
+  <!-- GUI 复用 Plug 用例层、算法层和纯 ReadProcessMemory 内存访问层 -->
+  <ItemDefinitionGroup>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ResourceCompile Include="App.rc" />
+    <ClInclude Include="resource.h" />
+    <Image Include="assets\poe2.ico" />
+    <Image Include="assets\poe2.png" />
+    <None Include="assets\build_icon.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Plug\gui.cpp" />
+    <ClCompile Include="..\Plug\MonitorModule.cpp" />
+    <ClCompile Include="..\Plug\SessionLauncher.cpp" />
+    <ClCompile Include="..\Plug\PanelSession.cpp" />
+    <ClCompile Include="..\Plug\GameLauncher.cpp" />
+    <ClCompile Include="..\Common\InstanceMutex.cpp" />
+    <ClCompile Include="..\Plug\UiTheme.cpp" />
+    <ClCompile Include="..\Plug\ComboPanel.cpp" />
+    <ClCompile Include="..\Plug\ComboRunner.cpp" />
+    <ClCompile Include="..\Plug\ComboConfig.cpp" />
+    <ClCompile Include="..\Plug\Navigator.cpp" />
+    <ClCompile Include="..\Plug\FollowRunner.cpp" />
+    <ClCompile Include="..\Plug\FollowPanel.cpp" />
+    <ClCompile Include="..\Plug\PartyData.cpp" />
+    <ClCompile Include="..\Plug\MapSink.cpp" />
+    <ClCompile Include="..\Plug\NamedPipeClie.cpp" />
+    <ClCompile Include="..\Plug\PacketPanel.cpp" />
+    <ClCompile Include="..\Plug\RitualPanel.cpp" />
+    <ClCompile Include="..\Plug\RitualAutomation.cpp" />
+    <ClCompile Include="..\Plug\BmpWriter.cpp" />
+    <ClCompile Include="..\Common\AppConfig.cpp" />
+    <ClCompile Include="..\Common\Logger.cpp" />
+    <!-- 背包 / 周围扫描：复用 Plug 的用例层和内存访问层 -->
+    <ClCompile Include="..\Plug\UseCases.cpp" />
+    <ClCompile Include="..\Plug\RecoveryPanel.cpp" />
+    <ClCompile Include="..\Plug\ViewPanel.cpp" />
+    <ClCompile Include="..\Plug\SkillSlots.cpp" />
+    <ClCompile Include="..\Plug\WorldArea.cpp" />
+    <ClCompile Include="..\Plug\Inventory.cpp" />
+    <ClCompile Include="..\Plug\Surroundings.cpp" />
+    <ClCompile Include="..\Plug\MyOLAFunction.cpp" />
+
+    <ClCompile Include="..\Common\OlaDriver.cpp" />
+    <ClCompile Include="..\Common\GameMemory.cpp" />
+    <ClCompile Include="..\Common\Entity.cpp" />
+    <ClCompile Include="..\Common\Component.cpp" />
+    <ClCompile Include="..\Common\PointerChain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Plug\Navigator.h" />
+    <ClInclude Include="..\Plug\RecoveryPanel.h" />
+    <ClInclude Include="..\Plug\ViewPanel.h" />
+    <ClInclude Include="..\Common\ViewControls.h" />
+    <ClInclude Include="..\Plug\MonitorModule.h" />
+    <ClInclude Include="..\Common\MonitorInterface.h" />
+    <ClInclude Include="..\Plug\SessionLauncher.h" />
+    <ClInclude Include="..\Plug\PanelSession.h" />
+    <ClInclude Include="..\Plug\GameLauncher.h" />
+    <ClInclude Include="..\Common\GameTarget.h" />
+    <ClInclude Include="..\Common\InstanceMutex.h" />
+    <ClInclude Include="..\Plug\FollowRunner.h" />
+    <ClInclude Include="..\Plug\FollowPanel.h" />
+    <ClInclude Include="..\Plug\PartyData.h" />
+    <ClInclude Include="..\Common\FollowNavigation.h" />
+    <ClInclude Include="..\Plug\UiTheme.h" />
+    <ClInclude Include="..\Plug\ComboPanel.h" />
+    <ClInclude Include="..\Plug\ComboRunner.h" />
+    <ClInclude Include="..\Plug\ComboConfig.h" />
+    <ClInclude Include="..\Common\ComboSequence.h" />
+    <ClInclude Include="..\Common\ComboProtocol.h" />
+    <ClInclude Include="..\Plug\SkillSlots.h" />
+    <ClInclude Include="..\Plug\WorldArea.h" />
+    <ClInclude Include="..\Plug\MapSink.h" />
+    <ClInclude Include="..\Plug\NamedPipeClie.h" />
+    <ClInclude Include="..\Plug\PacketPanel.h" />
+    <ClInclude Include="..\Plug\RitualPanel.h" />
+    <ClInclude Include="..\Plug\RitualAutomation.h" />
+    <ClInclude Include="..\Common\PacketProtocol.h" />
+    <ClInclude Include="..\Common\PortalReturn.h" />
+    <ClInclude Include="..\Common\AppConfig.h" />
+    <ClInclude Include="..\Common\Logger.h" />
+    <ClInclude Include="..\Common\RunDiagnostics.h" />
+    <ClInclude Include="..\Common\GameOffsets.h" />
+    <ClInclude Include="..\Common\Recovery.h" />
+    <ClInclude Include="..\Common\PlayerVitals.h" />
+    <ClInclude Include="..\Common\RitualState.h" />
+    <ClInclude Include="..\Common\RitualCombat.h" />
+    <ClInclude Include="..\Common\MonsterIdentity.h" />
+    <ClInclude Include="..\Common\MonsterReader.h" />
+    <ClInclude Include="..\Common\EncounterRoute.h" />
+    <ClInclude Include="..\Common\MapFrame.h" />
+    <ClInclude Include="..\Common\MapGeometry.h" />
+    <ClInclude Include="..\Common\PollSource.h" />
+    <ClInclude Include="..\Common\Protocal.h" />
+  </ItemGroup>
+  <!-- 运行期依赖：config.ini 必须和 exe 同目录 -->
+  <Target Name="CopyRuntimeDeps" AfterTargets="Build">
+    <ItemGroup>
+      <_RuntimeDep Include="$(ProjectDir)..\Plug\config.ini"
+                   Condition="Exists('$(ProjectDir)..\Plug\config.ini')" />
+      <_RuntimeDep Include="$(ProjectDir)..\Plug\recovery.ini" Condition="Exists('$(ProjectDir)..\Plug\recovery.ini')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_RuntimeDep)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+  </Target>
+
+
+  <PropertyGroup>
+    <AutoInject>false</AutoInject>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ItemGroup><ClInclude Include="..\Common\PixelNavigation.h" /><ClInclude Include="..\Common\RouteNavigation.h" /><ClInclude Include="..\Common\ManagedProtocol.h" /><ClInclude Include="..\Common\PipeIo.h" /></ItemGroup>
+</Project>

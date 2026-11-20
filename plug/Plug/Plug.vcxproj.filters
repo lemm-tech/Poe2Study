@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="背包遍历">
+      <UniqueIdentifier>{b2c3d4e5-f6a7-8901-bcde-f12345678901}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="周围遍历">
+      <UniqueIdentifier>{a1b2c3d4-e5f6-7890-abcd-ef1234567890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="地图模块">
+      <UniqueIdentifier>{c3d4e5f6-a7b8-9012-cdef-123456789012}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{d4e5f6a7-b8c9-0123-defa-234567890123}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{e5f6a7b8-c9d0-1234-efab-345678901234}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{a7f3c1d2-5b4e-4f6a-9c8d-112233445566}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{c9f1e2a3-4b5d-6e7f-8091-a2b3c4d5e6f7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FollowRunner.cpp"><Filter>源文件</Filter></ClCompile>
+    <ClCompile Include="PartyData.cpp"><Filter>源文件</Filter></ClCompile>
+    <ClCompile Include="WorldArea.cpp"><Filter>源文件</Filter></ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>背包遍历</Filter>
+    </ClCompile>
+    <ClCompile Include="Surroundings.cpp">
+      <Filter>周围遍历</Filter>
+    </ClCompile>
+    <ClCompile Include="MapSink.cpp">
+      <Filter>地图模块</Filter>
+    </ClCompile>
+    <ClCompile Include="BmpWriter.cpp">
+      <Filter>地图模块</Filter>
+    </ClCompile>
+    <ClCompile Include="NamedPipeClie.cpp">
+      <Filter>地图模块</Filter>
+    </ClCompile>
+    <ClCompile Include="entry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillSlots.cpp"><Filter>源文件</Filter></ClCompile>
+    <ClCompile Include="UseCases.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyOLAFunction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\AppConfig.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Logger.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\OlaDriver.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GameMemory.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\PointerChain.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Component.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Entity.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FollowRunner.h"><Filter>头文件</Filter></ClInclude>
+    <ClInclude Include="PartyData.h"><Filter>头文件</Filter></ClInclude>
+    <ClInclude Include="WorldArea.h"><Filter>头文件</Filter></ClInclude>
+    <ClInclude Include="..\Common\FollowNavigation.h"><Filter>头文件</Filter></ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>背包遍历</Filter>
+    </ClInclude>
+    <ClInclude Include="Surroundings.h">
+      <Filter>周围遍历</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSink.h">
+      <Filter>地图模块</Filter>
+    </ClInclude>
+    <ClInclude Include="MapShowcase.h">
+      <Filter>地图模块</Filter>
+    </ClInclude>
+    <ClInclude Include="BmpWriter.h">
+      <Filter>地图模块</Filter>
+    </ClInclude>
+    <ClInclude Include="NamedPipeClie.h">
+      <Filter>地图模块</Filter>
+    </ClInclude>
+    <ClInclude Include="MyOLAFunction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillSlots.h"><Filter>头文件</Filter></ClInclude>
+    <ClInclude Include="UseCases.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\AppConfig.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Logger.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\OlaDriver.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GameMemory.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\PointerChain.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GameOffsets.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Protocal.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\MapFrame.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\MapGeometry.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\LocateWindow.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Component.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Entity.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.ini">
+      <Filter>Common</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\NavGUI\App.rc" />
+  </ItemGroup>
+</Project>
